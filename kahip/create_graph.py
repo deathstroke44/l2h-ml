@@ -30,7 +30,7 @@ def create_knn_graph(data, k, opt=None):
     if opt != None and hasattr(opt, 'ranks_path'):
         ranks = np.load(opt.ranks_path)
         ranks = torch.from_numpy(ranks)
-        pdb.set_trace()
+        # pdb.set_trace()
     elif opt != None and opt.normalize_data:
         '''
         data /= data.norm(p=2, dim=-1, keepdim=True).clamp(min=1e-3)
@@ -141,7 +141,7 @@ def write_knn_graph(ranks, path):
     
     is_tensor = isinstance(ranks, torch.Tensor)
     print('in write knn graph')
-    pdb.set_trace()
+    # pdb.set_trace()
     
     
     if is_tensor:
@@ -200,7 +200,7 @@ def deserialize_create_graph():
         sub_idx = torch.randperm(len(data))[:int(len(data)/subsample)]
         torch.save(sub_idx, 'data/sub10_glove_idx.pt')
         data = data[sub_idx]
-        pdb.set_trace()
+        # pdb.set_trace()
     #data = data[192424:192436]
     #data[-1] = data[1]
     k=10

@@ -508,7 +508,7 @@ def read_all_ranks(opt, path=None):
             graph_path = path
         else:
             raise Exception('Cannot read precomputed knn graph for unknown type data')
-    
+    graph_path='/data/kabir/similarity-search/models/lth-data/knn.graph'
     ranks = []    
     lines = utils.load_lines(graph_path)[1:]
     #tuples of 2 indices, and their weights

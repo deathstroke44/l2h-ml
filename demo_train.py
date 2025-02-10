@@ -36,8 +36,8 @@ if __name__ == '__main__':
     opt.level2action = {0:'train'}
     opt.data_dir='/data/kabir/similarity-search/models/lth-data'
     data_x=utils.get_data_sift1M()[0]
-    grp=create_graph.create_knn_graph(data_x,opt.data_dir+'/knn.graph',100)
-    create_graph.write_knn_graph(grp)
+    grp=create_graph.create_knn_graph(data_x,100)
+    create_graph.write_knn_graph(grp,opt.data_dir+'/knn.graph')
     for n_cluster in n_cluster_l:
         print('n_cluster {}'.format(n_cluster))
         opt.n_clusters = n_cluster
