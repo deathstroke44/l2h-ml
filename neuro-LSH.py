@@ -9,7 +9,8 @@ from kahip import create_graph
 import data_extractor
 
     
-def run(data_loader,graph_file):
+def run(params):
+    print('dataset: ', params['dataset'])
     opt = utils.parse_args()
 
     #adjust the number of parts and the height of the hierarchy
@@ -18,16 +19,17 @@ def run(data_loader,graph_file):
     
     
     # load dataset 
-    dataset = utils.load_vectors(data_loader, 'train').to(utils.device)
-    queryset = utils.load_vectors(data_loader, 'query').to(utils.device)    
-    neighbors = utils.load_vectors(data_loader, 'answers').to(utils.device)
+    dataset = utils.load_vectors(params['data_loader'], 'train').to(utils.device)
+    queryset = utils.load_vectors(params['data_loader'], 'query').to(utils.device)    
+    neighbors = utils.load_vectors(params['data_loader'], 'answers').to(utils.device)
+    k=neighbors.shape[1]
 
     #specify which action to take at each level, actions can be km, kahip, train, or svm. Lower keys indicate closer to leaf.
     #Note that if 'kahip' is included, evaluation must be on training rather than test set, since partitioning was performed on training, but not test, set.
     #e.g.: opt.level2action = {0:'km', 1:'train', 3:'train'}
     opt.level2action = {0:'train'}
     opt.data_dir='/data/kabir/similarity-search/models/lth-data'
-    opt.graph_file=graph_file
+    opt.graph_file=params['graph_file']
     grp=create_graph.create_knn_graph(dataset,100)
     create_graph.write_knn_graph(grp,opt.data_dir+'/'+opt.graph_file)
     print(opt)
@@ -38,4 +40,10 @@ def run(data_loader,graph_file):
         for height in height_l:
             run_kmkahip(height, opt, dataset, queryset, neighbors)
 
-run(data_extractor.get_data_sift,'sift-0-knn.graph')
+
+info={
+    'data_loader': data_extractor.get_data_sift,
+    'graph_file': 'sift-0-knn.graph',
+    'dataset': 'sift-small'
+}
+run(info)
