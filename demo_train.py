@@ -32,7 +32,7 @@ if __name__ == '__main__':
     #Note that if 'kahip' is included, evaluation must be on training rather than test set, since partitioning was performed on training, but not test, set.
     #e.g.: opt.level2action = {0:'km', 1:'train', 3:'train'}
     opt.level2action = {0:'train'}
-    
+    opt.data_dir='/data/kabir/similarity-search/models/lth-data'
     for n_cluster in n_cluster_l:
         print('n_cluster {}'.format(n_cluster))
         opt.n_clusters = n_cluster

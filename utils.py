@@ -14,10 +14,16 @@ matplotlib.use('agg')
 import matplotlib.pyplot as plt
 #import seaborn as sns
 #import pandas as pd
-
+import pysvs as ps
 import pdb
 
 #parse the configs from config file
+
+dataset_path = '/data/kabir/similarity-search/dataset/'
+
+def read_vecs(filePath):
+    return ps.read_vecs(dataset_path + filePath)
+
 
 def read_config():
     with open('config', 'r') as file:
@@ -39,7 +45,7 @@ name2config = read_config()
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-kahip_dir = name2config['kahip_dir'] 
+kahip_dir = '/home/kabir/KaHIP'
 graph_file = 'knn.graph'
 data_dir = name2config['data_dir'] 
 
@@ -355,14 +361,24 @@ def load_sift_c_data(type='query'):
 All data are normalized.
 glove_dir : '~/partition/glove-100-angular/normalized'
 '''
+
+def get_data_sift1M(m=None):
+    # data we will search through
+    xb = read_vecs('sift/base.fvecs')  # 1M samples
+    # also get some query vectors to search with
+    xq = read_vecs('sift/query.fvecs')
+    # take just one query (there are many in sift_learn.fvecs)
+    gt = read_vecs('sift/groundtruth.ivecs')
+    return (xb,xq,gt.astype(np.int32))
+
 def load_sift_data(type='query'):
     if type == 'query':
-        return torch.from_numpy(np.load(osp.join(data_dir, 'sift_queries_unnorm.npy')))
+        return torch.from_numpy(get_data_sift1M()[1])
     elif type == 'answers':
         #answers are NN of the query points
-        return torch.from_numpy(np.load(osp.join(data_dir, 'sift_answers_unnorm.npy')))
+        return torch.from_numpy(get_data_sift1M()[2])
     elif type == 'train':
-        return torch.from_numpy(np.load(osp.join(data_dir, 'sift_dataset_unnorm.npy')))
+        return torch.from_numpy(get_data_sift1M()[0])
     else:
         raise Exception('Unsupported data type')
 '''

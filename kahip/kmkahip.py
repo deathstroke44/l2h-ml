@@ -68,26 +68,30 @@ def run_kahip(graph_path, datalen, branching_l, height, opt):
     #else:
     #    parts_path = opt.parts_path_root + str(n_class) + str(kahip_config)
         
-    if opt.glove and (branching_l_len == 1):
-        #if glove top level, use precomputed partition
-        parts_path = utils.glove_top_parts_path(opt.n_clusters, opt)
-    elif opt.sift and (branching_l_len == 1):
-        #if glove top level, use precomputed partition
-        parts_path = utils.sift_top_parts_path(opt.n_clusters, opt) 
-    elif opt.prefix10m and (branching_l_len == 1):
-        #if glove top level, use precomputed partition
-        parts_path = utils.prefix10m_top_parts_path(opt.n_clusters, opt)      
-    elif (branching_l_len > 1 or not os.path.exists(parts_path)):        
-        #cmd = "LD_LIBRARY_PATH=./KaHIP/extern/argtable-2.10/lib ./KaHIP/deploy/kaffpa " + graph_file + " --preconfiguration=" + configuration + " --output_filename=" + output_file + " --k=" + str(num_parts)   
-        cmd = os.path.join(utils.kahip_dir, "deploy", "kaffpa") + ' ' + graph_path + " --preconfiguration=" + kahip_config + " --output_filename=" + parts_path + " --k=" + str(n_class) #+ " --imbalance=" + str(3)
-        pdb.set_trace()
-        if os.system(cmd) != 0:
+    # if opt.glove and (branching_l_len == 1):
+    #     #if glove top level, use precomputed partition
+    #     parts_path = utils.glove_top_parts_path(opt.n_clusters, opt)
+    # elif opt.sift and (branching_l_len == 1):
+    #     #if glove top level, use precomputed partition
+    #     parts_path = utils.sift_top_parts_path(opt.n_clusters, opt) 
+    # elif opt.prefix10m and (branching_l_len == 1):
+    #     #if glove top level, use precomputed partition
+    #     parts_path = utils.prefix10m_top_parts_path(opt.n_clusters, opt)      
+    # elif (branching_l_len > 1 or not os.path.exists(parts_path)):        
+    #     #cmd = "LD_LIBRARY_PATH=./KaHIP/extern/argtable-2.10/lib ./KaHIP/deploy/kaffpa " + graph_file + " --preconfiguration=" + configuration + " --output_filename=" + output_file + " --k=" + str(num_parts)   
+    #     cmd = os.path.join(utils.kahip_dir, "deploy", "kaffpa") + ' ' + graph_path + " --preconfiguration=" + kahip_config + " --output_filename=" + parts_path + " --k=" + str(n_class) #+ " --imbalance=" + str(3)
+    #     pdb.set_trace()
+    #     if os.system(cmd) != 0:
+    #         raise Exception('Kahip error')
+
+    #     #raise exception here if just want partitioning of top level
+    #     print('parts path', parts_path)
+    #     raise Exception('done partitioning!', parts_path)
+    
+    cmd = os.path.join(utils.kahip_dir, "deploy", "kaffpa") + ' ' + graph_path + " --preconfiguration=" + kahip_config + " --output_filename=" + parts_path + " --k=" + str(n_class) #+ " --imbalance=" + str(3)
+    pdb.set_trace()
+    if os.system(cmd) != 0:
             raise Exception('Kahip error')
-
-        #raise exception here if just want partitioning of top level
-        print('parts path', parts_path)
-        raise Exception('done partitioning!', parts_path)
-
     return parts_path
 
 '''
@@ -425,6 +429,7 @@ def create_data_tree_root(dataset, all_ranks, ds_idx, train_node, idx2bin, heigh
     if datalen <= opt.k:
         return None
     graph_path = os.path.join(opt.data_dir, opt.graph_file) #'../data/knn.graph'
+    print(opt)
     
     #ranks are 1-based
     if opt.glove or opt.sift or opt.prefix10m: #and len(branching_l) == 1:
