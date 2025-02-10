@@ -37,7 +37,7 @@ if __name__ == '__main__':
     opt.data_dir='/data/kabir/similarity-search/models/lth-data'
     data_x=utils.get_data_sift1M()[0]
     grp=create_graph.create_knn_graph(data_x,100)
-    create_graph.write_knn_graph(grp,opt.data_dir+'/knn.graph')
+    create_graph.write_knn_graph(grp,opt.data_dir+'/'+opt.graph_file)
     for n_cluster in n_cluster_l:
         print('n_cluster {}'.format(n_cluster))
         opt.n_clusters = n_cluster
