@@ -1,4 +1,4 @@
-from .. import neuroLSH, data_extractor
+import neuroLSH, data_extractor
 infos=[
 {
     'data_loader': data_extractor.get_data_sift,
