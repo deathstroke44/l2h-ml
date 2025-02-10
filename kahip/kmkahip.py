@@ -89,7 +89,7 @@ def run_kahip(graph_path, datalen, branching_l, height, opt):
     #     raise Exception('done partitioning!', parts_path)
     
     cmd = os.path.join(utils.kahip_dir, "deploy", "kaffpa") + ' ' + graph_path + " --preconfiguration=" + kahip_config + " --output_filename=" + parts_path + " --k=" + str(n_class) #+ " --imbalance=" + str(3)
-    pdb.set_trace()
+    # pdb.set_trace()
     if os.system(cmd) != 0:
             raise Exception('Kahip error')
     return parts_path
