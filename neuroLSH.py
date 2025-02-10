@@ -48,7 +48,7 @@ def run(params):
                 run_kmkahip(height, opt, dataset, queryset, neighbors)
     
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"An error occurred: {e} {params['dataset']}")
         traceback.print_exc()
 
 
