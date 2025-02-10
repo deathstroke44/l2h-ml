@@ -18,9 +18,9 @@ def run(data_loader,graph_file):
     
     
     # load dataset 
-    dataset = utils.load_data(data_loader, 'train').to(utils.device)
-    queryset = utils.load_data(data_loader, 'query').to(utils.device)    
-    neighbors = utils.load_data(data_loader, 'answers').to(utils.device)
+    dataset = utils.load_vectors(data_loader, 'train').to(utils.device)
+    queryset = utils.load_vectors(data_loader, 'query').to(utils.device)    
+    neighbors = utils.load_vectors(data_loader, 'answers').to(utils.device)
 
     #specify which action to take at each level, actions can be km, kahip, train, or svm. Lower keys indicate closer to leaf.
     #Note that if 'kahip' is included, evaluation must be on training rather than test set, since partitioning was performed on training, but not test, set.
@@ -28,8 +28,7 @@ def run(data_loader,graph_file):
     opt.level2action = {0:'train'}
     opt.data_dir='/data/kabir/similarity-search/models/lth-data'
     opt.graph_file=graph_file
-    data_x=utils.get_data_sift1M()[0]
-    grp=create_graph.create_knn_graph(data_x,100)
+    grp=create_graph.create_knn_graph(dataset,100)
     create_graph.write_knn_graph(grp,opt.data_dir+'/'+opt.graph_file)
     print(opt)
     for n_cluster in n_cluster_l:
