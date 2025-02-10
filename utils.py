@@ -383,6 +383,18 @@ def load_sift_data(type='query'):
         raise Exception('Unsupported data type')
 '''
 '''
+
+def load_vectors(data_loader,type='query'):
+    if type == 'query':
+        return torch.from_numpy(data_loader()[1])
+    elif type == 'answers':
+        #answers are NN of the query points
+        return torch.from_numpy(data_loader()[2])
+    elif type == 'train':
+        return torch.from_numpy(data_loader()[0])
+    else:
+        raise Exception('Unsupported data type')
+
 def load_prefix10m_data(type='query', opt=None):    
     if type == 'query':
         return torch.from_numpy(np.load(osp.join(data_dir, 'prefix10m_queries.npy')))
