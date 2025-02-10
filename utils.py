@@ -391,7 +391,7 @@ def load_vectors(data_loader,type='query'):
         #answers are NN of the query points
         return torch.from_numpy(data_loader()[2])
     elif type == 'train':
-        return torch.from_numpy(data_loader()[0])
+        return torch.from_numpy(data_loader()[0].astype(np.int32))
     else:
         raise Exception('Unsupported data type')
 
