@@ -364,11 +364,11 @@ glove_dir : '~/partition/glove-100-angular/normalized'
 
 def get_data_sift1M(m=None):
     # data we will search through
-    xb = read_vecs('sift/base.fvecs')  # 1M samples
+    xb = read_vecs('siftsmall/siftsmall_base.fvecs')  # 1M samples
     # also get some query vectors to search with
-    xq = read_vecs('sift/query.fvecs')
+    xq = read_vecs('siftsmall/siftsmall_query.fvecs')
     # take just one query (there are many in sift_learn.fvecs)
-    gt = read_vecs('sift/groundtruth.ivecs')
+    gt = read_vecs('siftsmall/siftsmall_groundtruth.ivecs')
     return (xb,xq,gt.astype(np.int32))
 
 def load_sift_data(type='query'):

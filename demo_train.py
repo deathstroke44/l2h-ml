@@ -5,6 +5,7 @@ Demo for running training or linear models.
 
 import utils
 from kahip.kmkahip import run_kmkahip
+from kahip import create_graph
 
     
 if __name__ == '__main__':
@@ -13,7 +14,8 @@ if __name__ == '__main__':
     #adjust the number of parts and the height of the hierarchy
     n_cluster_l = [2]
     height_l = [1]
-
+    
+    
     # load dataset 
     if opt.glove:
         dataset = utils.load_glove_data('train').to(utils.device)
@@ -33,6 +35,9 @@ if __name__ == '__main__':
     #e.g.: opt.level2action = {0:'km', 1:'train', 3:'train'}
     opt.level2action = {0:'train'}
     opt.data_dir='/data/kabir/similarity-search/models/lth-data'
+    data_x=utils.get_data_sift1M()[0]
+    grp=create_graph.create_knn_graph(data_x,opt.data_dir+'/knn.graph')
+    create_graph.write_knn_graph(grp)
     for n_cluster in n_cluster_l:
         print('n_cluster {}'.format(n_cluster))
         opt.n_clusters = n_cluster
