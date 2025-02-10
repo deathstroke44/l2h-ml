@@ -87,8 +87,9 @@ def run_kahip(graph_path, datalen, branching_l, height, opt):
     #     #raise exception here if just want partitioning of top level
     #     print('parts path', parts_path)
     #     raise Exception('done partitioning!', parts_path)
-    
+    print(graph_path)
     cmd = os.path.join(utils.kahip_dir, "deploy", "kaffpa") + ' ' + graph_path + " --preconfiguration=" + kahip_config + " --output_filename=" + parts_path + " --k=" + str(n_class) #+ " --imbalance=" + str(3)
+    print(cmd)
     # pdb.set_trace()
     if os.system(cmd) != 0:
             raise Exception('Kahip error')

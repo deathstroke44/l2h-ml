@@ -26,7 +26,7 @@ Returns:
 -ranks, tensor 
 '''
 def create_knn_graph(data, k, opt=None):
-
+    print('Reach here')
     if opt != None and hasattr(opt, 'ranks_path'):
         ranks = np.load(opt.ranks_path)
         ranks = torch.from_numpy(ranks)
