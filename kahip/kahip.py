@@ -508,10 +508,10 @@ if __name__ == '__main__':
     dsnode_path = opt.dsnode_path + str(opt.n_clusters)
     utils.pickle_dump(root_dsnode, dsnode_path)
     
-    with open(osp.join(opt.data_dir, 'cutsz_k{}_ht{}_{}'.format(k, height, n_clusters)), 'w') as file:
-        file.write(str(ht2cutsz))
-        file.write('\n\n')
-        file.write(str(opt))
+    # with open(osp.join(opt.data_dir, 'cutsz_k{}_ht{}_{}'.format(k, height, n_clusters)), 'w') as file:
+    #     file.write(str(ht2cutsz))
+    #     file.write('\n\n')
+    #     file.write(str(opt))
 
     ''' Evaluate '''
     ###eval_root.load_state_dict()

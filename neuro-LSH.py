@@ -33,6 +33,7 @@ def run(params):
     opt.graph_file=params['graph_file']
     opt.k=k
     opt.k_graph=params['k_graph']
+    opt.dataset_name=params['dataset']
     grp=create_graph.create_knn_graph(dataset,k)
     create_graph.write_knn_graph(grp,opt.data_dir+'/'+opt.graph_file)
     print(opt)
