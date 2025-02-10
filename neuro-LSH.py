@@ -10,6 +10,7 @@ import data_extractor
 
     
 def run(params):
+    params['graph_file']=params['dataset']+params['graph_file']
     print('dataset: ', params['dataset'])
     opt = utils.parse_args()
 
@@ -30,7 +31,9 @@ def run(params):
     opt.level2action = {0:'train'}
     opt.data_dir='/data/kabir/similarity-search/models/lth-data'
     opt.graph_file=params['graph_file']
-    grp=create_graph.create_knn_graph(dataset,100)
+    opt.k=k
+    opt.k_graph=params['k_graph']
+    grp=create_graph.create_knn_graph(dataset,k)
     create_graph.write_knn_graph(grp,opt.data_dir+'/'+opt.graph_file)
     print(opt)
     for n_cluster in n_cluster_l:
@@ -43,7 +46,8 @@ def run(params):
 
 info={
     'data_loader': data_extractor.get_data_sift,
-    'graph_file': 'sift-0-knn.graph',
-    'dataset': 'sift-small'
+    'graph_file': '-0-knn.graph',
+    'dataset': 'sift-small',
+    'k_graph': 100
 }
 run(info)
