@@ -67,7 +67,7 @@ all_ranks: can be tensor or python list
 
 '''
 def create_knn_sub_graph(all_ranks, idx2weights, ds_idx, data, opt):
-
+    print("reach here 2")
     if False:
         if opt != None and opt.normalize_data and not opt.glove:
             data /= data.norm(p=2, dim=-1, keepdim=True).clamp(min=1e-3)
@@ -131,6 +131,8 @@ Input:
 #kahip takes lines corresponding to points, each line contains indices of neighbors
 '''
 def write_knn_graph(ranks, path):
+    print("reach here 3")
+    
     #torch.save(ranks, path+'.pth')
     #edge_set = set()
     edge_l = []
