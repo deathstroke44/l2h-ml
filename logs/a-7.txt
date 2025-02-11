@@ -1,0 +1,87 @@
+dataset:  notre
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  6653360
+edge_set len 5068977
+written to  /data/kabir/similarity-search/models/lth-data/notre-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='notre-0-knn.graph', dataset_name='notre', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='notre-0-knn.graph', dataset_name='notre', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([332668]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='notre-0-knn.graph', dataset_name='notre', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/notre-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/notre-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2notre0ht1_100_20 --k=2
+Done partitioning top level!
+chunk  0
+epoch 0 loss: 15.61422851898306 train acc: 0.924212290604571    val acc: 0.9431920649233544 lr: 0.0008
+epoch 1 loss: 14.448513934735514 train acc: 0.9377180490737563    val acc: 0.9492034866245868 lr: 0.0008
+epoch 2 loss: 14.016256886699809 train acc: 0.9431075997218689    val acc: 0.9492034866245868 lr: 0.0008
+epoch 3 loss: 13.783353556930624 train acc: 0.9460042934223191    val acc: 0.9516080553050796 lr: 0.0008
+epoch 4 loss: 13.663817513002943 train acc: 0.9467360577638375    val acc: 0.9528103396453261 lr: 0.0008
+epoch 5 loss: 13.571966171264648 train acc: 0.9483999866399871    val acc: 0.951307484220018 lr: 0.0008
+epoch 6 loss: 13.49835676809623 train acc: 0.9495902423324153    val acc: 0.9507063420498948 lr: 0.0008
+epoch 7 loss: 13.458966861288232 train acc: 0.9498999517217717    val acc: 0.9579200480913737 lr: 0.0008
+epoch 8 loss: 13.417382049968259 train acc: 0.950440424969864    val acc: 0.9504057709648331 lr: 0.0008
+epoch 9 loss: 13.38547235586001 train acc: 0.9509869709510811    val acc: 0.9531109107303878 lr: 0.0008
+epoch 10 loss: 13.141522169391145 train acc: 0.9544211015330615    val acc: 0.9609257589419897 lr: 0.000168
+epoch 11 loss: 13.08086436349874 train acc: 0.9549889020802147    val acc: 0.961526901112113 lr: 0.000168
+epoch 12 loss: 13.048292966376378 train acc: 0.9552621750708232    val acc: 0.95912233243162 lr: 0.000168
+epoch 13 loss: 13.029707328568069 train acc: 0.955672084556736    val acc: 0.9603246167718665 lr: 0.000168
+epoch 14 loss: 13.01769249169594 train acc: 0.9553897024664405    val acc: 0.9588217613465585 lr: 0.000168
+epoch 15 loss: 13.00036359000104 train acc: 0.9558512301839127    val acc: 0.9606251878569282 lr: 0.000168
+epoch 16 loss: 12.99203948552072 train acc: 0.9557601391870432    val acc: 0.9594229035166817 lr: 0.000168
+epoch 17 loss: 12.94067111174698 train acc: 0.9563097215348225    val acc: 0.9624286143672979 lr: 3.5279999999999994e-05
+correct 314952 Final acc: 0.9563097215348225
+Done creating training tree. Starting evaluation ...
+About to evaluate model! torch.Size([332668]) height: 1 level2action {0: 'train'}
+cut_sizes defaultdict(<class 'list'>, {})
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='notre-0-knn.graph', dataset_name='notre', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+acc 0.9157500000000001 probe count 164769.79 95th 169635.0
+Serializing eval root...
+Done serializing /data/kabir/similarity-search/models/lth-data/evalroot_sift_ht1_2_10020nn5
+dataset:  nuswide
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  5372860
+edge_set len 5306933
+written to  /data/kabir/similarity-search/models/lth-data/nuswide-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='nuswide-0-knn.graph', dataset_name='nuswide', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='nuswide-0-knn.graph', dataset_name='nuswide', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([268643]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='nuswide-0-knn.graph', dataset_name='nuswide', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/nuswide-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/nuswide-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2nuswide0ht1_100_20 --k=2
+Done partitioning top level!
+chunk  0
+An error occurred: mat1 and mat2 shapes cannot be multiplied (64x500 and 128x512) nuswide
+dataset:  nytimes
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  29000000
+edge_set len 27820072
+written to  /data/kabir/similarity-search/models/lth-data/nytimes-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=100, k_graph=100, subsample=1, nn_mult=5, graph_file='nytimes-0-knn.graph', dataset_name='nytimes', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=100, k_graph=100, subsample=1, nn_mult=5, graph_file='nytimes-0-knn.graph', dataset_name='nytimes', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([290000]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=100, k_graph=100, subsample=1, nn_mult=5, graph_file='nytimes-0-knn.graph', dataset_name='nytimes', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/nytimes-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/nytimes-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2nytimes0ht1_100_100 --k=2
+Done partitioning top level!
+An error occurred: [Errno 2] No such file or directory: 'path_to_data_directory/partition/2nytimes0ht1_100_100' nytimes

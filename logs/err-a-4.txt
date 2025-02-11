@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/data/kabir/similarity-search/models/l2h-ml/neuroLSH.py", line 48, in run
+    run_kmkahip(height, opt, dataset, queryset, neighbors)
+  File "/data/kabir/similarity-search/models/l2h-ml/kahip/kmkahip.py", line 639, in run_kmkahip
+    root_dsnode = create_data_tree_root(dataset, all_ranks, ds_idx, train_node, idx2bin, height, branching_l,ht2cutsz, opt)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/kabir/similarity-search/models/l2h-ml/kahip/kmkahip.py", line 459, in create_data_tree_root
+    dsnode = add_datanode_children(dataset, (all_ranks, idx2weights), ds_idx, train_node, idx2bin, height-1, branching_l, classes, ht2cutsz, 0, opt, ranks, toplevel=True, root=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/kabir/similarity-search/models/l2h-ml/kahip/kmkahip.py", line 200, in add_datanode_children
+    train_node.train(dataset_n, dsnode, idx2bin, height)
+  File "/data/kabir/similarity-search/models/l2h-ml/model/train.py", line 128, in train
+    predicted = self.model(ds)
+                ^^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 153, in forward
+    return self.module(*inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/kabir/similarity-search/models/l2h-ml/./model/main.py", line 45, in forward
+    y = self.block1(x)
+        ^^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kabir/.conda/envs/kabirenv/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (64x4096 and 128x512)

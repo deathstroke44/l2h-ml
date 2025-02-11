@@ -1,0 +1,82 @@
+dataset:  enron
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  1899740
+edge_set len 1631286
+written to  /data/kabir/similarity-search/models/lth-data/enron-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='enron-0-knn.graph', dataset_name='enron', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='enron-0-knn.graph', dataset_name='enron', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([94987]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='enron-0-knn.graph', dataset_name='enron', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/enron-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/enron-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2enron0ht1_100_20 --k=2
+Done partitioning top level!
+An error occurred: [Errno 2] No such file or directory: 'path_to_data_directory/partition/2enron0ht1_100_20' enron
+dataset:  audio
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  1067740
+edge_set len 869131
+written to  /data/kabir/similarity-search/models/lth-data/audio-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='audio-0-knn.graph', dataset_name='audio', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='audio-0-knn.graph', dataset_name='audio', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([53387]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='audio-0-knn.graph', dataset_name='audio', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/audio-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/audio-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2audio0ht1_100_20 --k=2
+Done partitioning top level!
+chunk  0
+An error occurred: mat1 and mat2 shapes cannot be multiplied (64x192 and 128x512) audio
+dataset:  cifar
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  1000000
+edge_set len 870835
+written to  /data/kabir/similarity-search/models/lth-data/cifar-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='cifar-0-knn.graph', dataset_name='cifar', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='cifar-0-knn.graph', dataset_name='cifar', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([50000]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=20, k_graph=100, subsample=1, nn_mult=5, graph_file='cifar-0-knn.graph', dataset_name='cifar', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/cifar-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/cifar-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2cifar0ht1_100_20 --k=2
+Done partitioning top level!
+chunk  0
+An error occurred: mat1 and mat2 shapes cannot be multiplied (64x512 and 128x512) cifar
+dataset:  ethz
+NOTE: fast_kmeans and itq options share the same value
+NOTE: fast_kmeans not enabled
+Reach here
+chunk  0
+reach here 3
+in write knn graph
+weighted_n_edges  3664300
+edge_set len 2986567
+written to  /data/kabir/similarity-search/models/lth-data/ethz-0-knn.graph
+Namespace(n_clusters=256, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=100, k_graph=100, subsample=1, nn_mult=5, graph_file='ethz-0-knn.graph', dataset_name='ethz', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=256, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+n_cluster 2
+Configs: Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=100, k_graph=100, subsample=1, nn_mult=5, graph_file='ethz-0-knn.graph', dataset_name='ethz', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data') 
+ Starting data processing and training ...
+torch.Size([36643]) height: 1 level2action {0: 'train'}
+Namespace(n_clusters=2, kahip_config='strong', parts_path_root='path_to_data_directory/partition/', dsnode_path='path_to_data_directory/train_dsnode', k=100, k_graph=100, subsample=1, nn_mult=5, graph_file='ethz-0-knn.graph', dataset_name='ethz', fast_kmeans=False, itq=False, cplsh=True, pca=False, st=False, rp=False, kmeans_use_kahip_height=-2, compute_gt_nn=False, write_res=True, normalize_data=False, max_bin_count=70, acc_thresh=0.95, n_repeat_km=3, n_input=128, n_hidden=512, n_class=2, n_epochs=1, lr=0.0008, glove=False, sift=True, glove_c=False, sift_c=False, prefix10m=False, level2action={0: 'train'}, data_dir='/data/kabir/similarity-search/models/lth-data')
+/data/kabir/similarity-search/models/lth-data/ethz-0-knn.graph
+/home/kabir/KaHIP/deploy/kaffpa /data/kabir/similarity-search/models/lth-data/ethz-0-knn.graph --preconfiguration=strong --output_filename=path_to_data_directory/partition/2ethz0ht1_100_100 --k=2
+Done partitioning top level!
+An error occurred: [Errno 2] No such file or directory: 'path_to_data_directory/partition/2ethz0ht1_100_100' ethz

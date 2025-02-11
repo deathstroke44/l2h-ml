@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/data/kabir/similarity-search/models/l2h-ml/neuroLSH.py", line 48, in run
+    run_kmkahip(height, opt, dataset, queryset, neighbors)
+  File "/data/kabir/similarity-search/models/l2h-ml/kahip/kmkahip.py", line 639, in run_kmkahip
+    root_dsnode = create_data_tree_root(dataset, all_ranks, ds_idx, train_node, idx2bin, height, branching_l,ht2cutsz, opt)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/kabir/similarity-search/models/l2h-ml/kahip/kmkahip.py", line 447, in create_data_tree_root
+    lines = utils.load_lines(parts_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/kabir/similarity-search/models/l2h-ml/utils.py", line 779, in load_lines
+    with open(path, 'r') as file:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'path_to_data_directory/partition/2deep0ht1_100_20'
